@@ -1,6 +1,10 @@
 
-
-
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
 h1{
     font-family: 'Times New Roman', Times, serif; 
@@ -14,19 +18,10 @@ h1{
 
 }
 
-image{
-    width: 100%; /* A kép szélessége a szülőelem szélességére fog igazodni */
+img{
+    width: 100%;
     height: auto;
-}
-div {
-    width: 500px;
-    height: 500px;
-}
-img {
-    display: block;
     margin: 0 auto;
-    max-width: 100%;
-    height: auto;
 }
 * {
     margin: 0;
@@ -35,13 +30,35 @@ img {
     font-family: 'Arial', sans-serif;
 }
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+.suti {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transform: scale(1.01);
+    transition: ease-in-out 0.1s;
 }
-
-/* Navigációs sáv */
+.suti:hover{
+    transform: scale(1.1);
+}
+.suti p{
+    font-weight: bold;
+    margin: 5px;
+}
+.ar {
+    background: pink;
+    color: salmon;
+    border: none;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+}
 header {
     background-color: #333;
     color: white;
@@ -55,12 +72,14 @@ header .logo h1 {
 }
 
 nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px;
     list-style: none;
     margin-top: 20px;
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0 15px;
 }
 
@@ -96,41 +115,13 @@ nav ul li a:hover {
 }
 
 /* Menü szekció */
-#menu {
-    padding: 50px 20px;
-    text-align: center;
+.menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
-#menu h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
 
-#menu ul {
-    list-style: none;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0;
-}
-
-#menu ul li {
-    margin-bottom: 30px;
-}
-
-#menu h3 {
-    font-size: 1.5rem;
-    color: #f39c12;
-}
-
-#menu p {
-    font-size: 1rem;
-    color: #555;
-}
-
-#menu span {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
 
 /* Rólunk szekció */
 #about {
@@ -154,47 +145,15 @@ nav ul li a:hover {
 }
 
 
-#gallery {
-    background-color: #f9f9f9; /* Világos háttér a galériának */
-    padding: 25px 10px; /* Térköz hozzáadása a galéria körül */
-    text-align: center;
-    margin-bottom: 80px; /* Térköz a footer előtt */
-    clear: both; /* Biztosítja, hogy a galéria ne folyjon össze más szakaszokkal */
-}
 
-.gallery-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Reszponzív elrendezés */
-    gap: 20px; /* Kép közötti távolság */
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.gallery-images img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer szakasz */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 30px 20px;
     text-align: center;
-    margin-top: 50px; /* Térköz a többi szakasz felett */
-    clear: both; /* Biztosítja, hogy a footer se folyjon össze a galériával */
+    padding: 10px;
+   background-color: #333;
+    color: white;
+    margin-top: 20px;
 }
 
-/* Galéria képek */
-.gallery-images img {
-    max-width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobilbarát nézet */
 @media (max-width: 768px) {
     .gallery-images {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Még kisebb oszlopok mobilra */
